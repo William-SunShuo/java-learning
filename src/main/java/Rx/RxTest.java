@@ -3,28 +3,32 @@ package Rx;
 public class RxTest {
 
     public static void main(String[] args){
+      Observable.create(new ObservableOnSubscribe<String>() {
+          @Override
+          public void subscribe(Emitter<String> emitter) throws Throwable {
+              emitter.onNext("123");
+          }
+      }).map(s -> Integer.parseInt(s)).subscribe(new Observer<Integer>() {
+          @Override
+          public void onSubscribe() {
 
-        Observable.create(new Observable<String>() {
-            @Override
-            void subScribe(Observer<String> observer) {
-                observer.onNext("sss");
-            }
-        }).map(s -> s + "123").subScribe(new Observer<String>() {
-            @Override
-            public void onNext(String s) {
-                System.out.print("----------------" + s);
-            }
+          }
 
-            @Override
-            public void onError() {
+          @Override
+          public void onNext(Integer s) {
+              System.out.print(s + 1);
+          }
 
-            }
+          @Override
+          public void onError(Throwable t) {
 
-            @Override
-            public void onComplete() {
+          }
 
-            }
-        });
+          @Override
+          public void onComplete() {
+
+          }
+      });
     }
 
 }
