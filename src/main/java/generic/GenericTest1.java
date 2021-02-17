@@ -1,19 +1,26 @@
 package generic;
-import entity.Person;
 import entity.Student;
 import enums.Gender;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 public class GenericTest1 {
 
     public static void main(String[] args) {
-        List<Person> persons = new ArrayList<>();
-        persons.add(new Student("1", "张三", 19, Gender.FEMALE));
-        persons.add(new Student("2", "李四", 20, Gender.MALE));
-        persons.add(new Student("3", "王五", 21, Gender.MALE));
-        for (Person p : persons) {
-            System.out.println(((Student) p).getName());
+        List<Student> students = new ArrayList<>();
+        students.add(new Student("1", "张三", 29, Gender.FEMALE));
+        students.add(new Student("2", "李四", 30, Gender.MALE));
+        students.add(new Student("3", "王五", 21, Gender.MALE));
+//        Collections.sort(students, new Comparator<Student>() {
+//            @Override
+//            public int compare(Student o1, Student o2) {
+//                return o1.getAge() - o2.getAge();
+//            }
+//        });
+
+        Collections.sort(students);
+
+        for (int i = 0; i <students.size() ; i++) {
+            System.out.println(students.get(i).getName());
         }
     }
 }

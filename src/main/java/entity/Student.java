@@ -5,7 +5,7 @@ import enums.Gender;
 /**
  * Created by DELL1 on 2021/2/9.
  */
-public class Student extends Person{
+public class Student extends Person implements Comparable<Student>{
 
     private String no;
     private String name;
@@ -49,5 +49,10 @@ public class Student extends Person{
 
     public void setGender(Gender gender) {
         this.gender = gender;
+    }
+
+    @Override
+    public int compareTo(Student o) {
+        return this.getAge() - o.getAge();
     }
 }
