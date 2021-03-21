@@ -1,4 +1,4 @@
-package designpatten.resposibilitychain;
+package designpatten.responsibilitychain;
 
 /**
  * Created by shuo.sun on 2021/3/21.

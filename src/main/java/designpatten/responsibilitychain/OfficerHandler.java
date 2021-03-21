@@ -1,4 +1,4 @@
-package designpatten.resposibilitychain;
+package designpatten.responsibilitychain;
 
 
 /**

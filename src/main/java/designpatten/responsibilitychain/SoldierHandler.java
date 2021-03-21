@@ -1,17 +1,17 @@
-package designpatten.resposibilitychain;
+package designpatten.responsibilitychain;
 
 /**
  * Created by shuo.sun on 2021/3/21.
  */
-public class CommanderHandler extends Handler {
+public class SoldierHandler extends Handler {
 
-    public CommanderHandler(Handler next) {
+    public SoldierHandler(Handler next) {
         super(next);
     }
 
     @Override
     protected void handleRequest(Request request) {
-        if (RequestType.DEFEND_CASTLE == request.getRequestType()) {
+        if (RequestType.COLLECT_TAX == request.getRequestType()) {
             printResult(request);
         } else {
             super.next(request);
